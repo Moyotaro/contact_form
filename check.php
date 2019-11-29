@@ -1,5 +1,8 @@
 <?php
 
+// フェイルの読み込み
+require_once('function.php');
+
 // echo '<pre>';  見た目の整形
 // var_dump($_SERVER); 中身の確認
 // exit;
@@ -57,16 +60,16 @@ if ($content == '') {
 <body>
     <h1>入力内容確認</h1>
     <!-- 画面に表示 -->
-    <p><?php echo $nickname_result; ?></p>
-    <p><?php echo $email_result; ?></p>
-    <p><?php echo $content_result; ?></p>
+    <p><?php echo h($nickname_result); ?></p>
+    <p><?php echo h($email_result); ?></p>
+    <p><?php echo h($content_result); ?></p>
 
     <form action="thanks.php" method="POST">
         <!-- actionはリンク先 -->
         <!-- hiddenは表示されないけど中身がある、欲しい時に使う -->
-        <input type="hidden" name='nickname' value="<?= $nickname?>">
-        <input type="hidden" name='email' value="<?= $email?>">
-        <input type="hidden" name='content' value="<?= $content?>">
+        <input type="hidden" name='nickname' value="<?= h($nickname)?>">
+        <input type="hidden" name='email' value="<?= h($email)?>">
+        <input type="hidden" name='content' value="<?= h($content)?>">
         <button type="button" onclick="history.back()">戻る</button>
         <?php if ($nickname !='' && $email !='' && $content !='') : ?>
             <input type="submit" value="OK">

@@ -1,5 +1,7 @@
 <?php
 // 入力内容の取得
+require_once('function.php');
+
 $nickname = $_POST['nickname'];
 $email = $_POST['email'];
 $content = $_POST['content'];
@@ -15,9 +17,9 @@ $content = $_POST['content'];
 
 <body>
     <h1>お問い合わせありがとうございました！</h1>
-    <p><?php echo $nickname; ?></p>
-    <p><?php echo $email; ?></p>
-    <p><?php echo $content; ?></p>
+    <p><?php echo h($nickname); ?></p>
+    <p><?php echo h($email); ?></p>
+    <p><?php echo h($content); ?></p>
 </body>
 
 </html>
