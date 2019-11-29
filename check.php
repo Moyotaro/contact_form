@@ -1,4 +1,15 @@
 <?php
+
+// echo '<pre>';  見た目の整形
+// var_dump($_SERVER); 中身の確認
+// exit;
+
+
+// POST送信ではなかったら、index.phpにリダイレクトする
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: index.php');
+}
+
 // $nickname = $_GET['nickname'];
 // echo $nickname;
 
@@ -52,6 +63,7 @@ if ($content == '') {
 
     <form action="thanks.php" method="POST">
         <!-- actionはリンク先 -->
+        <!-- hiddenは表示されないけど中身がある、欲しい時に使う -->
         <input type="hidden" name='nickname' value="<?= $nickname?>">
         <input type="hidden" name='email' value="<?= $email?>">
         <input type="hidden" name='content' value="<?= $content?>">
