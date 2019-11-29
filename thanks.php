@@ -1,10 +1,14 @@
 <?php
 // 入力内容の取得
 require_once('function.php');
+require_once('dbconnect.php');
 
 $nickname = $_POST['nickname'];
 $email = $_POST['email'];
 $content = $_POST['content'];
+
+$stmt = $dbh->prepare('INSERT INTO surveys (nickname, email, content) VALUES (?, ?, ?)');
+$stmt->execute([$nickname, $email, $content]);
 
 ?>
 <!DOCTYPE html>

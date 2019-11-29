@@ -19,3 +19,31 @@ $POSTっていうスーパーグローバル変数に
 
 
 ['okinawa' =>  'FC琉球']
+
+
+
+
+
+
+phpMyAdmin
+- MySQLを操作するツール（アプリ）
+- 左
+  - DBの一覧
+- 右
+  - 操作するとこ
+
+- データベースを行うこと
+  - CRUD処理
+
+phpMyAdmin
+- MySQLを操作するツール（アプリ）
+
+MySQL
+- RDBMS
+- RDBを操作するためのアプリ
+- DBのこと
+
+SQL
+- DBを操作する言語のこと
+  - INSERT xxx
+  - SELECT xxx
